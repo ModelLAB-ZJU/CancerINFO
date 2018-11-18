@@ -1,0 +1,25 @@
+错误sql语句：
+SELECT * FROM CosmicSample INNER JOIN (SELECT * FROM CosmicMutantExport WHERE Gene_name = 'TYMS' AND Mutation_AA = 'p.TYMS 5' TANDEM REPEAT') b on CosmicSample.sample_id = b.ID_sample
+客户IP:unknown
+时间 :2017-10-02 05:44:25
+
+错误sql语句：
+SELECT * FROM CosmicSample INNER JOIN (SELECT * FROM CosmicMutantExport WHERE Gene_name = 'HIF1A' AND Mutation_AA = 'p.3' UTR Polymorphism') b on CosmicSample.sample_id = b.ID_sample
+客户IP:unknown
+时间 :2017-10-02 12:29:33
+
+错误sql语句：
+SELECT * FROM CosmicSample INNER JOIN (SELECT * FROM CosmicMutantExport WHERE Gene_name = 'KIT' AND Mutation_AA = 'p.3' UTR Mutation') b on CosmicSample.sample_id = b.ID_sample
+客户IP:unknown
+时间 :2017-10-02 13:17:43
+
+错误sql语句：
+SELECT * FROM CosmicSample INNER JOIN (SELECT * FROM CosmicMutantExport WHERE Gene_name = 'EPCAM' AND Mutation_AA = 'p.3' Deletion') b on CosmicSample.sample_id = b.ID_sample
+客户IP:unknown
+时间 :2017-10-02 17:40:44
+
+错误sql语句：
+SELECT * FROM CosmicSample INNER JOIN (SELECT * FROM CosmicMutantExport WHERE Gene_name = 'EPCAM' AND Mutation_AA = 'p.3' exon deletion') b on CosmicSample.sample_id = b.ID_sample
+客户IP:unknown
+时间 :2017-10-02 17:40:46
+

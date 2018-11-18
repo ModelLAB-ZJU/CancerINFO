@@ -1,0 +1,290 @@
+错误sql语句：
+SELECT * FROM CosmicSample INNER JOIN (SELECT * FROM CosmicMutantExport WHERE Gene_name = 'TYMS' AND Mutation_AA = 'p.TYMS 5' TANDEM REPEAT') b on CosmicSample.sample_id = b.ID_sample
+客户IP:unknown
+时间 :2017-10-15 05:34:11
+
+错误sql语句：
+SELECT * FROM CosmicSample INNER JOIN (SELECT * FROM CosmicMutantExport WHERE Gene_name = 'SMAD7' AND Mutation_AA = 'p.743-4876T>A') b on CosmicSample.sample_id = b.ID_sample
+客户IP:unknown
+时间 :2017-10-15 07:54:38
+
+错误sql语句：
+SELECT * FROM CosmicSample INNER JOIN ((SELECT ID_sample FROM CosmicMutantExport WHERE Gene_name = 'MLL') UNION (SELECT Sample_ID FROM CosmicFusionExport WHERE Translocation_Name LIKE '%MLL{%') UNION (SELECT SAMPLE_ID FROM CosmicCompleteGeneExpression WHERE GENE_NAME = 'MLL') UNION (SELECT ID_SAMPLE FROM CosmicCompleteCNA WHERE Gene_name = 'MLL')) b on CosmicSample.sample_id = b.ID_sample
+客户IP:unknown
+时间 :2017-10-15 07:54:42
+
+错误sql语句：
+SELECT * FROM CosmicSample INNER JOIN (SELECT * FROM CosmicFusionExport WHERE Translocation_Name LIKE '%MLL{%') b ON CosmicSample.sample_id = b.Sample_ID
+客户IP:unknown
+时间 :2017-10-15 07:54:44
+
+错误sql语句：
+SELECT * FROM CosmicSample INNER JOIN (SELECT * FROM CosmicFusionExport WHERE Translocation_Name LIKE '%MLL{%') b ON CosmicSample.sample_id = b.Sample_ID
+客户IP:unknown
+时间 :2017-10-15 07:54:45
+
+错误sql语句：
+SELECT * FROM CosmicSample INNER JOIN ((SELECT ID_sample FROM CosmicMutantExport WHERE Gene_name = 'CACNA2D1') UNION (SELECT Sample_ID FROM CosmicFusionExport WHERE Translocation_Name LIKE '%CACNA2D1{%') UNION (SELECT SAMPLE_ID FROM CosmicCompleteGeneExpression WHERE GENE_NAME = 'CACNA2D1') UNION (SELECT ID_SAMPLE FROM CosmicCompleteCNA WHERE Gene_name = 'CACNA2D1')) b on CosmicSample.sample_id = b.ID_sample
+客户IP:unknown
+时间 :2017-10-15 07:54:47
+
+错误sql语句：
+SELECT * FROM CosmicSample INNER JOIN (SELECT * FROM CosmicMutantExport WHERE Gene_name = 'CACNA2D1' AND Mutation_AA = 'p.95+25579G>A') b on CosmicSample.sample_id = b.ID_sample
+客户IP:unknown
+时间 :2017-10-15 07:54:49
+
+错误sql语句：
+SELECT * FROM CosmicSample INNER JOIN (SELECT * FROM CosmicMutantExport WHERE Gene_name = 'CACNA2D1' AND Mutation_AA = 'p.526+14914G>A') b on CosmicSample.sample_id = b.ID_sample
+客户IP:unknown
+时间 :2017-10-15 07:54:50
+
+错误sql语句：
+SELECT * FROM CosmicSample INNER JOIN ((SELECT ID_sample FROM CosmicMutantExport WHERE Gene_name = 'CASC15') UNION (SELECT Sample_ID FROM CosmicFusionExport WHERE Translocation_Name LIKE '%CASC15{%') UNION (SELECT SAMPLE_ID FROM CosmicCompleteGeneExpression WHERE GENE_NAME = 'CASC15') UNION (SELECT ID_SAMPLE FROM CosmicCompleteCNA WHERE Gene_name = 'CASC15')) b on CosmicSample.sample_id = b.ID_sample
+客户IP:unknown
+时间 :2017-10-15 07:54:52
+
+错误sql语句：
+SELECT * FROM CosmicSample INNER JOIN (SELECT * FROM CosmicMutantExport WHERE Gene_name = 'CASC15' AND Mutation_AA = 'p.1391+28855A>G') b on CosmicSample.sample_id = b.ID_sample
+客户IP:unknown
+时间 :2017-10-15 07:54:54
+
+错误sql语句：
+SELECT * FROM CosmicSample INNER JOIN (SELECT * FROM CosmicMutantExport WHERE Gene_name = 'CASC15' AND Mutation_AA = 'p.1391+14815T>C') b on CosmicSample.sample_id = b.ID_sample
+客户IP:unknown
+时间 :2017-10-15 07:54:56
+
+错误sql语句：
+SELECT * FROM CosmicSample INNER JOIN (SELECT * FROM CosmicMutantExport WHERE Gene_name = 'CASC15' AND Mutation_AA = 'p.1391+20780C>A') b on CosmicSample.sample_id = b.ID_sample
+客户IP:unknown
+时间 :2017-10-15 07:54:57
+
+错误sql语句：
+SELECT * FROM CosmicSample INNER JOIN ((SELECT ID_sample FROM CosmicMutantExport WHERE Gene_name = 'TERC') UNION (SELECT Sample_ID FROM CosmicFusionExport WHERE Translocation_Name LIKE '%TERC{%') UNION (SELECT SAMPLE_ID FROM CosmicCompleteGeneExpression WHERE GENE_NAME = 'TERC') UNION (SELECT ID_SAMPLE FROM CosmicCompleteCNA WHERE Gene_name = 'TERC')) b on CosmicSample.sample_id = b.ID_sample
+客户IP:unknown
+时间 :2017-10-15 07:54:59
+
+错误sql语句：
+SELECT * FROM CosmicSample INNER JOIN (SELECT * FROM CosmicMutantExport WHERE Gene_name = 'TERC' AND Mutation_AA = 'p.*451T>C') b on CosmicSample.sample_id = b.ID_sample
+客户IP:unknown
+时间 :2017-10-15 07:55:01
+
+错误sql语句：
+SELECT * FROM CosmicSample INNER JOIN (SELECT * FROM CosmicMutantExport WHERE Gene_name = 'TERC' AND Mutation_AA = 'p.*451G>C') b on CosmicSample.sample_id = b.ID_sample
+客户IP:unknown
+时间 :2017-10-15 07:55:02
+
+错误sql语句：
+SELECT * FROM CosmicSample INNER JOIN ((SELECT ID_sample FROM CosmicMutantExport WHERE Gene_name = 'LOC100996325') UNION (SELECT Sample_ID FROM CosmicFusionExport WHERE Translocation_Name LIKE '%LOC100996325{%') UNION (SELECT SAMPLE_ID FROM CosmicCompleteGeneExpression WHERE GENE_NAME = 'LOC100996325') UNION (SELECT ID_SAMPLE FROM CosmicCompleteCNA WHERE Gene_name = 'LOC100996325')) b on CosmicSample.sample_id = b.ID_sample
+客户IP:unknown
+时间 :2017-10-15 07:55:04
+
+错误sql语句：
+SELECT * FROM CosmicSample INNER JOIN (SELECT * FROM CosmicMutantExport WHERE Gene_name = 'LOC100996325' AND Mutation_AA = 'p.366+1469G>A') b on CosmicSample.sample_id = b.ID_sample
+客户IP:unknown
+时间 :2017-10-15 07:55:05
+
+错误sql语句：
+SELECT * FROM CosmicSample INNER JOIN ((SELECT ID_sample FROM CosmicMutantExport WHERE Gene_name = 'SSX2') UNION (SELECT Sample_ID FROM CosmicFusionExport WHERE Translocation_Name LIKE '%SSX2{%') UNION (SELECT SAMPLE_ID FROM CosmicCompleteGeneExpression WHERE GENE_NAME = 'SSX2') UNION (SELECT ID_SAMPLE FROM CosmicCompleteCNA WHERE Gene_name = 'SSX2')) b on CosmicSample.sample_id = b.ID_sample
+客户IP:unknown
+时间 :2017-10-15 07:55:07
+
+错误sql语句：
+SELECT * FROM CosmicSample INNER JOIN (SELECT * FROM CosmicFusionExport WHERE Translocation_Name LIKE '%SS18{%' AND Translocation_Name LIKE '%SSX2{%') b ON CosmicSample.sample_id = b.Sample_ID
+客户IP:unknown
+时间 :2017-10-15 07:55:09
+
+错误sql语句：
+SELECT * FROM CosmicSample INNER JOIN ((SELECT ID_sample FROM CosmicMutantExport WHERE Gene_name = 'QKI') UNION (SELECT Sample_ID FROM CosmicFusionExport WHERE Translocation_Name LIKE '%QKI{%') UNION (SELECT SAMPLE_ID FROM CosmicCompleteGeneExpression WHERE GENE_NAME = 'QKI') UNION (SELECT ID_SAMPLE FROM CosmicCompleteCNA WHERE Gene_name = 'QKI')) b on CosmicSample.sample_id = b.ID_sample
+客户IP:unknown
+时间 :2017-10-15 07:55:11
+
+错误sql语句：
+SELECT * FROM CosmicSample INNER JOIN ((SELECT ID_sample FROM CosmicMutantExport WHERE Gene_name = 'RPN1') UNION (SELECT Sample_ID FROM CosmicFusionExport WHERE Translocation_Name LIKE '%RPN1{%') UNION (SELECT SAMPLE_ID FROM CosmicCompleteGeneExpression WHERE GENE_NAME = 'RPN1') UNION (SELECT ID_SAMPLE FROM CosmicCompleteCNA WHERE Gene_name = 'RPN1')) b on CosmicSample.sample_id = b.ID_sample
+客户IP:unknown
+时间 :2017-10-15 07:55:12
+
+错误sql语句：
+SELECT * FROM CosmicSample INNER JOIN ((SELECT ID_sample FROM CosmicMutantExport WHERE Gene_name = 'BRWD3') UNION (SELECT Sample_ID FROM CosmicFusionExport WHERE Translocation_Name LIKE '%BRWD3{%') UNION (SELECT SAMPLE_ID FROM CosmicCompleteGeneExpression WHERE GENE_NAME = 'BRWD3') UNION (SELECT ID_SAMPLE FROM CosmicCompleteCNA WHERE Gene_name = 'BRWD3')) b on CosmicSample.sample_id = b.ID_sample
+客户IP:unknown
+时间 :2017-10-15 07:55:14
+
+错误sql语句：
+SELECT * FROM CosmicSample INNER JOIN (SELECT * FROM CosmicMutantExport WHERE Gene_name = 'BRWD3' AND Mutation_AA = 'p.431-7655G>A') b on CosmicSample.sample_id = b.ID_sample
+客户IP:unknown
+时间 :2017-10-15 07:55:16
+
+错误sql语句：
+SELECT * FROM CosmicSample INNER JOIN ((SELECT ID_sample FROM CosmicMutantExport WHERE Gene_name = 'LINC-PINT') UNION (SELECT Sample_ID FROM CosmicFusionExport WHERE Translocation_Name LIKE '%LINC-PINT{%') UNION (SELECT SAMPLE_ID FROM CosmicCompleteGeneExpression WHERE GENE_NAME = 'LINC-PINT') UNION (SELECT ID_SAMPLE FROM CosmicCompleteCNA WHERE Gene_name = 'LINC-PINT')) b on CosmicSample.sample_id = b.ID_sample
+客户IP:unknown
+时间 :2017-10-15 07:55:18
+
+错误sql语句：
+SELECT * FROM CosmicSample INNER JOIN (SELECT * FROM CosmicMutantExport WHERE Gene_name = 'LINC-PINT' AND Mutation_AA = 'p.1453-1575G>T') b on CosmicSample.sample_id = b.ID_sample
+客户IP:unknown
+时间 :2017-10-15 07:55:20
+
+错误sql语句：
+SELECT * FROM CosmicSample INNER JOIN (SELECT * FROM CosmicMutantExport WHERE Gene_name = 'LINC-PINT' AND Mutation_AA = 'p.1396-11653A>G') b on CosmicSample.sample_id = b.ID_sample
+客户IP:unknown
+时间 :2017-10-15 07:55:21
+
+错误sql语句：
+SELECT * FROM CosmicSample INNER JOIN (SELECT * FROM CosmicMutantExport WHERE Gene_name = 'LINC-PINT' AND Mutation_AA = 'p.403+11316A>C') b on CosmicSample.sample_id = b.ID_sample
+客户IP:unknown
+时间 :2017-10-15 07:55:23
+
+错误sql语句：
+SELECT * FROM CosmicSample INNER JOIN (SELECT * FROM CosmicMutantExport WHERE Gene_name = 'LINC-PINT' AND Mutation_AA = 'p.1265-17498C>G') b on CosmicSample.sample_id = b.ID_sample
+客户IP:unknown
+时间 :2017-10-15 07:55:25
+
+错误sql语句：
+SELECT * FROM CosmicSample INNER JOIN ((SELECT ID_sample FROM CosmicMutantExport WHERE Gene_name = 'CRP') UNION (SELECT Sample_ID FROM CosmicFusionExport WHERE Translocation_Name LIKE '%CRP{%') UNION (SELECT SAMPLE_ID FROM CosmicCompleteGeneExpression WHERE GENE_NAME = 'CRP') UNION (SELECT ID_SAMPLE FROM CosmicCompleteCNA WHERE Gene_name = 'CRP')) b on CosmicSample.sample_id = b.ID_sample
+客户IP:unknown
+时间 :2017-10-15 07:55:27
+
+错误sql语句：
+SELECT * FROM CosmicSample INNER JOIN (SELECT * FROM CosmicMutantExport WHERE Gene_name = 'CRP' AND Mutation_AA = 'p.*779G>A') b on CosmicSample.sample_id = b.ID_sample
+客户IP:unknown
+时间 :2017-10-15 07:55:28
+
+错误sql语句：
+SELECT * FROM CosmicSample INNER JOIN ((SELECT ID_sample FROM CosmicMutantExport WHERE Gene_name = 'G6PD') UNION (SELECT Sample_ID FROM CosmicFusionExport WHERE Translocation_Name LIKE '%G6PD{%') UNION (SELECT SAMPLE_ID FROM CosmicCompleteGeneExpression WHERE GENE_NAME = 'G6PD') UNION (SELECT ID_SAMPLE FROM CosmicCompleteCNA WHERE Gene_name = 'G6PD')) b on CosmicSample.sample_id = b.ID_sample
+客户IP:unknown
+时间 :2017-10-15 07:55:30
+
+错误sql语句：
+SELECT * FROM CosmicSample INNER JOIN (SELECT * FROM CosmicMutantExport WHERE Gene_name = 'G6PD' AND Mutation_AA = 'p.biallelic inactivation') b on CosmicSample.sample_id = b.ID_sample
+客户IP:unknown
+时间 :2017-10-15 07:55:32
+
+错误sql语句：
+SELECT * FROM CosmicSample INNER JOIN (SELECT * FROM CosmicMutantExport WHERE Gene_name = 'G6PD' AND Mutation_AA = 'p.S218F') b on CosmicSample.sample_id = b.ID_sample
+客户IP:unknown
+时间 :2017-10-15 07:55:33
+
+错误sql语句：
+SELECT * FROM CosmicSample INNER JOIN (SELECT * FROM CosmicMutantExport WHERE Gene_name = 'G6PD' AND Mutation_AA = 'p.V98M') b on CosmicSample.sample_id = b.ID_sample
+客户IP:unknown
+时间 :2017-10-15 07:55:35
+
+错误sql语句：
+SELECT * FROM CosmicSample INNER JOIN (SELECT * FROM CosmicMutantExport WHERE Gene_name = 'G6PD' AND Mutation_AA = 'p.N156D') b on CosmicSample.sample_id = b.ID_sample
+客户IP:unknown
+时间 :2017-10-15 07:55:38
+
+错误sql语句：
+SELECT * FROM CosmicSample INNER JOIN ((SELECT ID_sample FROM CosmicMutantExport WHERE Gene_name = 'HIST1H3J') UNION (SELECT Sample_ID FROM CosmicFusionExport WHERE Translocation_Name LIKE '%HIST1H3J{%') UNION (SELECT SAMPLE_ID FROM CosmicCompleteGeneExpression WHERE GENE_NAME = 'HIST1H3J') UNION (SELECT ID_SAMPLE FROM CosmicCompleteCNA WHERE Gene_name = 'HIST1H3J')) b on CosmicSample.sample_id = b.ID_sample
+客户IP:unknown
+时间 :2017-10-15 07:55:40
+
+错误sql语句：
+SELECT * FROM CosmicSample INNER JOIN ((SELECT ID_sample FROM CosmicMutantExport WHERE Gene_name = 'TPR') UNION (SELECT Sample_ID FROM CosmicFusionExport WHERE Translocation_Name LIKE '%TPR{%') UNION (SELECT SAMPLE_ID FROM CosmicCompleteGeneExpression WHERE GENE_NAME = 'TPR') UNION (SELECT ID_SAMPLE FROM CosmicCompleteCNA WHERE Gene_name = 'TPR')) b on CosmicSample.sample_id = b.ID_sample
+客户IP:unknown
+时间 :2017-10-15 07:55:42
+
+错误sql语句：
+SELECT * FROM CosmicSample INNER JOIN ((SELECT ID_sample FROM CosmicMutantExport WHERE Gene_name = 'LMBRD2') UNION (SELECT Sample_ID FROM CosmicFusionExport WHERE Translocation_Name LIKE '%LMBRD2{%') UNION (SELECT SAMPLE_ID FROM CosmicCompleteGeneExpression WHERE GENE_NAME = 'LMBRD2') UNION (SELECT ID_SAMPLE FROM CosmicCompleteCNA WHERE Gene_name = 'LMBRD2')) b on CosmicSample.sample_id = b.ID_sample
+客户IP:unknown
+时间 :2017-10-15 07:55:44
+
+错误sql语句：
+SELECT * FROM CosmicSample INNER JOIN (SELECT * FROM CosmicMutantExport WHERE Gene_name = 'LMBRD2' AND Mutation_AA = 'p.369-77T>C') b on CosmicSample.sample_id = b.ID_sample
+客户IP:unknown
+时间 :2017-10-15 07:55:46
+
+错误sql语句：
+SELECT * FROM CosmicSample INNER JOIN ((SELECT ID_sample FROM CosmicMutantExport WHERE Gene_name = 'ATP8A2') UNION (SELECT Sample_ID FROM CosmicFusionExport WHERE Translocation_Name LIKE '%ATP8A2{%') UNION (SELECT SAMPLE_ID FROM CosmicCompleteGeneExpression WHERE GENE_NAME = 'ATP8A2') UNION (SELECT ID_SAMPLE FROM CosmicCompleteCNA WHERE Gene_name = 'ATP8A2')) b on CosmicSample.sample_id = b.ID_sample
+客户IP:unknown
+时间 :2017-10-15 07:55:48
+
+错误sql语句：
+SELECT * FROM CosmicSample INNER JOIN (SELECT * FROM CosmicMutantExport WHERE Gene_name = 'ATP8A2' AND Mutation_AA = 'p.2679+25949A>G') b on CosmicSample.sample_id = b.ID_sample
+客户IP:unknown
+时间 :2017-10-15 07:55:50
+
+错误sql语句：
+SELECT * FROM CosmicSample INNER JOIN ((SELECT ID_sample FROM CosmicMutantExport WHERE Gene_name = 'CDH1') UNION (SELECT Sample_ID FROM CosmicFusionExport WHERE Translocation_Name LIKE '%CDH1{%') UNION (SELECT SAMPLE_ID FROM CosmicCompleteGeneExpression WHERE GENE_NAME = 'CDH1') UNION (SELECT ID_SAMPLE FROM CosmicCompleteCNA WHERE Gene_name = 'CDH1')) b on CosmicSample.sample_id = b.ID_sample
+客户IP:unknown
+时间 :2017-10-15 07:55:51
+
+错误sql语句：
+SELECT * FROM CosmicSample INNER JOIN (SELECT * FROM CosmicCompleteCNA WHERE Gene_name = 'CDH1' AND MUT_TYPE = 'loss') b on CosmicSample.sample_id = b.ID_SAMPLE
+客户IP:unknown
+时间 :2017-10-15 07:55:53
+
+错误sql语句：
+SELECT * FROM CosmicSample INNER JOIN (SELECT * FROM CosmicMutantExport WHERE Gene_name = 'CDH1' AND Mutation_AA = 'p.A298T') b on CosmicSample.sample_id = b.ID_sample
+客户IP:unknown
+时间 :2017-10-15 07:55:54
+
+错误sql语句：
+SELECT * FROM CosmicSample INNER JOIN (SELECT * FROM CosmicMutantExport WHERE Gene_name = 'CDH1' AND Mutation_AA = 'p.A617T') b on CosmicSample.sample_id = b.ID_sample
+客户IP:unknown
+时间 :2017-10-15 07:55:56
+
+错误sql语句：
+SELECT * FROM CosmicSample INNER JOIN (SELECT * FROM CosmicMutantExport WHERE Gene_name = 'CDH1' AND Mutation_AA = 'p.A634V') b on CosmicSample.sample_id = b.ID_sample
+客户IP:unknown
+时间 :2017-10-15 07:55:58
+
+错误sql语句：
+SELECT * FROM CosmicSample INNER JOIN (SELECT * FROM CosmicMutantExport WHERE Gene_name = 'CDH1') b on CosmicSample.sample_id = b.ID_sample
+客户IP:unknown
+时间 :2017-10-15 07:55:59
+
+错误sql语句：
+SELECT * FROM CosmicSample INNER JOIN (SELECT * FROM CosmicMutantExport WHERE Gene_name = 'CDH1' AND Mutation_AA = 'p.D254N') b on CosmicSample.sample_id = b.ID_sample
+客户IP:unknown
+时间 :2017-10-15 07:56:01
+
+错误sql语句：
+SELECT * FROM CosmicSample INNER JOIN (SELECT * FROM CosmicMutantExport WHERE Gene_name = 'CDH1' AND Mutation_AA = 'p.D257N') b on CosmicSample.sample_id = b.ID_sample
+客户IP:unknown
+时间 :2017-10-15 07:56:03
+
+错误sql语句：
+SELECT * FROM CosmicSample INNER JOIN (SELECT * FROM CosmicMutantExport WHERE Gene_name = 'CDH1') b on CosmicSample.sample_id = b.ID_sample
+客户IP:unknown
+时间 :2017-10-15 07:56:04
+
+错误sql语句：
+SELECT * FROM CosmicSample INNER JOIN (SELECT * FROM CosmicMutantExport WHERE Gene_name = 'CDH1') b on CosmicSample.sample_id = b.ID_sample
+客户IP:unknown
+时间 :2017-10-15 07:56:06
+
+错误sql语句：
+SELECT * FROM CosmicSample INNER JOIN (SELECT * FROM CosmicMutantExport WHERE Gene_name = 'CDH1' AND Mutation_AA = 'p.T340A') b on CosmicSample.sample_id = b.ID_sample
+客户IP:unknown
+时间 :2017-10-15 07:56:07
+
+错误sql语句：
+SELECT * FROM CosmicSample INNER JOIN (SELECT * FROM CosmicMutantExport WHERE Gene_name = 'CDH1') b on CosmicSample.sample_id = b.ID_sample
+客户IP:unknown
+时间 :2017-10-15 07:56:09
+
+错误sql语句：
+SELECT * FROM CosmicSample INNER JOIN (SELECT * FROM CosmicMutantExport WHERE Gene_name = 'CDH1' AND Mutation_AA = 'p.164-14627G>A') b on CosmicSample.sample_id = b.ID_sample
+客户IP:unknown
+时间 :2017-10-15 07:56:11
+
+错误sql语句：
+SELECT * FROM CosmicSample INNER JOIN (SELECT * FROM CosmicMutantExport WHERE Gene_name = 'CDH1' AND Mutation_AA = 'p.163+24432A>G') b on CosmicSample.sample_id = b.ID_sample
+客户IP:unknown
+时间 :2017-10-15 07:56:12
+
+错误sql语句：
+SELECT * FROM CosmicSample INNER JOIN ((SELECT ID_sample FROM CosmicMutantExport WHERE Gene_name = 'FGFR4') UNION (SELECT Sample_ID FROM CosmicFusionExport WHERE Translocation_Name LIKE '%FGFR4{%') UNION (SELECT SAMPLE_ID FROM CosmicCompleteGeneExpression WHERE GENE_NAME = 'FGFR4') UNION (SELECT ID_SAMPLE FROM CosmicCompleteCNA WHERE Gene_name = 'FGFR4')) b on CosmicSample.sample_id = b.ID_sample
+客户IP:unknown
+时间 :2017-10-15 07:56:16
+
+错误sql语句：
+SELECT * FROM CosmicSample INNER JOIN (SELECT * FROM CosmicCompleteCNA WHERE Gene_name = 'FGFR4' AND MUT_TYPE = 'gain') b on CosmicSample.sample_id = b.ID_SAMPLE
+客户IP:unknown
+时间 :2017-10-15 07:56:17
+
+错误sql语句：
+SELECT * FROM CosmicSample INNER JOIN (SELECT * FROM CosmicMutantExport WHERE Gene_name = 'FGFR4' AND Mutation_AA = 'p.N535') b on CosmicSample.sample_id = b.ID_sample
+客户IP:unknown
+时间 :2017-10-15 07:56:19
+

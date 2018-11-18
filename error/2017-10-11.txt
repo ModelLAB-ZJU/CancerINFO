@@ -1,0 +1,10 @@
+错误sql语句：
+SELECT * FROM CosmicSample INNER JOIN (SELECT * FROM CosmicMutantExport WHERE Gene_name = 'TYMS' AND Mutation_AA = 'p.TYMS 5' TANDEM REPEAT') b on CosmicSample.sample_id = b.ID_sample
+客户IP:unknown
+时间 :2017-10-11 15:45:29
+
+错误sql语句：
+SELECT * FROM CosmicSample INNER JOIN (SELECT * FROM CosmicMutantExport WHERE Gene_name = 'HIF1A' AND Mutation_AA = 'p.3' UTR Polymorphism') b on CosmicSample.sample_id = b.ID_sample
+客户IP:unknown
+时间 :2017-10-11 22:34:24
+

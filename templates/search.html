@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>{$title}</title>
+<link href="img/cancerinfo_ico.ico" rel="shortcut icon" />
+<link rel="stylesheet" href="css/stylesheet.css" />
+<script src="lib/jquery-1.12.1.min.js"></script>
+<script src="lib/cancerT.js"></script>
+<script type="application/javascript">
+    var base_url = function(uri, with_mode, keep_ref, keep_other_params, additional_params) {
+
+        var base = '';
+        var mode_base = '';
+        var url = (with_mode === true ? mode_base : base);
+        if (url.length > 1 && url.charAt(url.length - 1) !== '/')
+            url += '/';
+
+        if (uri === undefined)
+            uri = '';
+        else
+            uri = $.trim(uri.toLowerCase());
+
+        if (uri.charAt(0) === '/')
+            uri = uri.substr(1);
+
+        if (uri.length > 1 && uri.charAt(uri.length - 1) !== '/')
+             uri += '';
+		//$("h2").append(url + uri + build_url_query_param_string(keep_ref, keep_other_params, additional_params));
+        return url + uri + build_url_query_param_string(keep_ref, keep_other_params, additional_params);
+		
+    }
+</script>
+
+<script src="lib/url.js"></script>
+
+</head>
+
+<body>
+<div id="watermark"></div>
+<div class="main">
+  <div class="navbar">
+    <div class="navi">
+      <div class="nav-brand"><a href="#/"><img class="logo-brand" src="img/modellab_logo.png"></a></div>
+      <div id="nav-ui">
+        <ul>
+          <li><a href="index.php"><b>CancerINFO</b></a></li>
+          <li><a href="cancer_browser.php">CANCER BROWSER</a></li>
+          <li><a href="gene_browser.php">GENE BROWSER</a></li>
+          <li><a href="search.php">SEARCH</a></li>
+          <li><a href="data.php">DOWNLOAD</a></li>
+          <li><a href="doc.php">DOCUMENTATION</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="content">
+      <div class="content-search-left">
+        <div class="content-search-form">
+          <h3>Search Traits by Tissue Type</h3>
+          <form name="TumorContentSearch" id="TumorContentSearch">
+          	<label for="TissueDropdown"> <span class="label_text"> Tissue (required): </span>
+              <select name="tissue" id="TissueDropdown">
+                <option value="">Select Tissue</option>
+              </select>
+            </label>
+            <label for="HierarchiesDropdown"> <span class="label_text"> Hierarchies (optional): </span>
+              <select name="hierarchies" id="HierarchiesDropdown" disabled="">
+                <option value="">Select Tissue First</option>
+              </select>
+            </label>
+            <label for="TumorDropdown"> <span class="label_text"> Tumor (optional): </span>
+              <select name="tumor" id="TumorDropdown" disabled="">
+                <option value="">Select Tissue First</option>
+              </select>
+            </label>
+<!--            <label for="variant_dropdown"> <span class="label_text"> Variant (optional): </span>
+              <select name="variant" id="VariantDropdown" disabled="">
+                <option value="">Select Tissue First</option>
+              </select>
+            </label>-->
+            <input class="button" type="submit" value="Search">
+          </form>
+        </div>
+        <div class="content-search-form">
+        <h3>Search Case of Traits by Gene</h3>
+          <form name="GeneContentSearch" id="GeneContentSearch">
+            <label for="GenesDropdown"> <span class="label_text"> Gene Symbol (required): </span>
+              <select name="Genes" id="GenesDropdown">
+                <option value="" selected="" default="">Select Gene</option>
+              </select>
+            </label>
+            <label for="GeneInput"> <span class="label_text"> (OR) Input Gene (required): </span>
+              <input name="gene_name" id="GeneInput" type="text" />
+            </label>
+            <input class="button" type="submit" value="Search">
+          </form>
+        </div>
+        <script src="lib/search.js"></script>
+      </div>
+      <div class="content-search-right">
+        <div class="content-search-sidebox">
+        <!--<h2>CancerINFO Statistics</h2>
+        <div style="height:160px; width:260px; display:block; overflow:hidden;">
+        <embed src="data/wordcloud.svg" type="image/svg+xml" pluginspage="http://www.adobe.com/svg/viewer/install/" />
+         </div>-->
+         <h2>Using CancerINFO</h2>
+         <ul class="biglist">
+			<li> <a href="doc.php?oncotree">CMO Tumor Type Tree V1.1</a></li>
+            <li> <a href="doc.php?usage">Usage Terms</a> </li>
+            <li> <a href="data.php">Data Access</a> </li>
+            <li> <a href="contribute.php">How can you contribute</a> </li>
+            <li> <a href="doc.php?level">Level of evidence</a> </li>
+            <li> <a href="doc.php?type">Type of evidence</a> </li>
+            <li> <a href="doc.php?drug">Cancer drug list</a> </li>
+         </ul>
+         <p>&nbsp;</p>
+        <h2>Cite and Contact Us:</h2>
+        <p>CancerINFO: a comprehensive resource for human tissue-specific and cancer-specific genome features. <i>Manuscript in preparartion </i></p>
+        <p>Any comments and suggestions are welcome, especially those that can help us make more accurate predictions or build a more convenient website. We can be reached at:<br /><i>Email: xiang-chen@zju.edu.cn (Dr. Chen)</i></p>
+        </div>
+      </div>
+      <div style="clear:both"></div>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="foot">
+      <p>Copyright © 2017-2020 <a href="https://github.com/ModelLAB-ZJU">SynergyLAB</a> | All Rights Reserved </p>
+      
+    </div>
+  </div>
+</div>
+</body>
+</html>

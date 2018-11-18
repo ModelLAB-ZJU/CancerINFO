@@ -1,0 +1,10 @@
+错误sql语句：
+SELECT * FROM CosmicSample INNER JOIN (SELECT * FROM CosmicMutantExport WHERE Gene_name = 'EPCAM' AND Mutation_AA = 'p.3' Deletion') b on CosmicSample.sample_id = b.ID_sample
+客户IP:unknown
+时间 :2017-10-12 03:49:44
+
+错误sql语句：
+SELECT * FROM CosmicSample INNER JOIN (SELECT * FROM CosmicMutantExport WHERE Gene_name = 'EPCAM' AND Mutation_AA = 'p.3' exon deletion') b on CosmicSample.sample_id = b.ID_sample
+客户IP:unknown
+时间 :2017-10-12 03:49:45
+

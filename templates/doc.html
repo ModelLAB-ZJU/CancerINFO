@@ -1,0 +1,366 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>{$title}</title>
+<link href="img/cancerinfo_ico.ico" rel="shortcut icon" />
+<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/bootstrap-table.css">
+<link rel="stylesheet" href="css/bootstrap-editable.css">
+<link rel="stylesheet" href="css/stylesheet.css" />
+<link rel="stylesheet" href="css/nav.css" />
+<script src="lib/jquery-1.12.1.min.js"></script>
+<script src="lib/cancerT.js"></script>
+<script src="lib/backbone.js" type="text/javascript"></script>
+<script src="lib/ga.js" type="text/javascript"></script>
+<script src="lib/nav.js" type="text/javascript"></script>
+<script src="lib/bootstrap.min.js"></script>
+<script src="lib/bootstrap-table.js"></script>
+<script src="lib/bootstrap-table-export.js"></script>
+<script src="lib/tableExport.js"></script>
+<script src="lib/bootstrap-editable.js"></script>
+</head>
+<body>
+<div id="watermark"></div>
+<div class="main">
+  <div class="navbar">
+    <div class="navi">
+      <div class="nav-brand"><a href="#/"><img class="logo-brand" src="img/modellab_logo.png"></a></div>
+      <div id="nav-ui">
+        <ul>
+          <li><a href="index.php"><b>CancerINFO</b></a></li>
+          <li><a href="cancer_browser.php">CANCER BROWSER</a></li>
+          <li><a href="gene_browser.php">GENE BROWSER</a></li>
+          <li><a href="search.php">SEARCH</a></li>
+          <li><a href="data.php">DOWNLOAD</a></li>
+          <li><a href="doc.php">DOCUMENTATION</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="content">
+      <div id="content-navigation" class="content-browser-left">
+        <div class="expandable-navigation-container">
+          <ul class="expandable-navigation" id="">
+          	<li class="menu_li"> <a href="doc.php" class="currentpage">About CancerINFO</a> </li>
+            <li class="menu_li"> <a href="doc.php?drug" class="currentpage">Cancer Drug</a> </li>
+            <li class="menu_li"> <span class="fake-anchor expandable">Precision Cancer Therapy</span>
+              <ul class="submenu closed">
+                {foreach $genelist as $key=>$val}
+                <li class="submenu_li"> <a class="subitem" href="doc.php?gene={$key}">{$key}</a> </li>
+                {/foreach}
+              </ul>
+            </li>
+            <li class="menu_li"> <span class="fake-anchor expandable">Cancer Pathways in Tissue</span>
+              <ul class="submenu closed">
+                {foreach $tissuelist as $key=>$val}
+                <li class="submenu_li"> <a class="subitem" href="doc.php?pathway={$key}">{$key}</a> </li>
+                {/foreach}
+              </ul>
+            </li>
+            <li class="menu_li"> <a href="doc.php?oncotree" class="currentpage">CMO Tumor Type Tree</a></li>
+            <!--<li class="menu_li"> <a href="terms.php" class="currentpage">Usage Terms</a> </li>-->
+            <li class="menu_li"> <a href="doc.php?sup" class="currentpage">Supplemental Data</a> </li>
+            <li class="menu_li"> <a href="doc.php?usage" class="currentpage">Usage Terms</a> </li>
+<!--            <li class="menu_li"> <a href="doc.php?submit" class="currentpage">How you can contribute</a> </li>-->
+            <li class="menu_li"> <a href="doc.php?level" class="currentpage">Level of evidence</a> </li>
+            <li class="menu_li"> <a href="doc.php?type" class="currentpage">Type of evidence</a> </li>
+<!--            <li class="menu_li"> <a href="doc.php" class="currentpage">How to use?</a> </li>-->
+            <li class="menu_li"> <span class="fake-anchor expandable">Drug Response of Cancer Cell-Line</span>
+              <ul class="submenu closed">
+                {foreach $cancerlist as $key=>$val}
+                	<li class="submenu_li"> <a class="subitem" href="doc.php?CCL={$key}">{$key}</a> </li>
+                {/foreach}
+              </ul>
+            </li>
+            <ul style="clear:both;">
+            </ul>
+          </ul>
+        </div>
+      </div>
+      <div class="content-browser-right">
+      <div style="line-height:25px;">
+      {if isset($st['gene']) }
+        <h4>{$gene} summary for cancer therapy:</h4>
+        <p>{$pct_gene.therapy_evidence}</p>
+        <p>​​&#8203;​​&#8203;</p>
+        <h4>{$gene} for specific drug in cancer therapy:</h4>
+        <table data-toggle="table" data-card-view='true' data-height='getHeight()'>
+          <thead>
+            <tr>
+              <th data-sortable='true'>Drug Name</th>
+              <th data-sortable='true'>Drug Family</th>
+              <th data-sortable='true'>Evidence Level</th>
+              <th data-sortable='true'>Clinical Significance</th>
+              <th>Evidence</th>
+              <th>Contradictory Evidence</th>
+              <th>Supports</th>
+            </tr>
+          </thead>
+          <tbody>
+          
+          {foreach $pct_drug as $key=>$val}
+          <tr>
+            <td>{$val.gene_drug}</td>
+            <td>{$val.gene_drug_family}</td>
+            <td>{$val.evidence_level}</td>
+            <td>{$val.evidence_clinical_significance}</td>
+            <td>{$val.evidence}</td>
+            <td>{$val.contradictory_evidence}</td>
+            <td><a style="cursor:pointer" onclick='alert("{$val.supports}")'>support</a></td>
+          </tr>
+          {/foreach}
+            </tbody>
+          
+        </table>
+        {/if}
+        {if isset($st['pathway']) }
+        <h4>Cancer-associated Pathways in {$st['pathway']}:</h4>
+        <table data-toggle="table" data-pagination="true" data-page-size=15>
+          <thead>
+            <tr>
+              <th data-sortable='true'>Order</th>
+              <th data-sortable='true'>KEGGID</th>
+              <th data-sortable='true'>P-value</th>
+              <th>Term</th>
+              <th>Symbols</th>
+            </tr>
+          </thead>
+          <tbody>
+          
+          {foreach $pathway as $key=>$val}
+          <tr>
+            <td>{$val.order1}</td>
+            <td><a href="http://www.genome.jp/kegg-bin/show_pathway?hsa{$val.KEGGID}" target="_blank">hsa{$val.KEGGID}</a></td>
+            <td>{$val.Pvalue}</td>
+            <td>{$val.Term}</td>
+            <td>{$val.symbols}</td>
+          </tr>
+          {/foreach}
+            </tbody> 
+        </table>
+        <p> <strong>Tips:</strong> Pathway enrichments by comparing {$st['pathway']} with human cancer-related genes; For human, pathway enrichments by comparing human cancer-related genes with all human genes. (<i>p</i>-value < 0.05)</p>
+        {/if}
+        
+        {if isset($st['oncotree'])}
+        <h4>CMO Tumor Type Tree (oncotree)</h4>
+        <p>&nbsp;</p>
+        <iframe src="templates/CMO.html" name="myframe"  width="800" height="700"  scrolling="yes" frameborder="0" id="myframe" border="0"></iframe>
+        {/if}
+        {if isset($st['usage'])}
+        <h4>Usage Terms</h4>
+        <p>&nbsp;</p>
+        <p>CancerINFO is an open-access knowledgebase precision oncology maintained by SynergyLab. SynergyLab reserves the right to update information at any time without notice. SynergyLab makes no warranties or representations, express or implied, with respect to any of the content, including as to the present accuracy, completeness, timeliness, adequacy, or usefulness of any of the content, and by using this website you agree that SynergyLab will not be liable for any loss or damages arising from your use of or reliance on information contained in this website or other websites that may be linked to from our website. CancerINFO is not intended as a substitute for medical professional judgement or advice but is to be used as an aid in understanding current medical knowledge for research purposes only. A physician should always be consulted for any health problem or medical condition. Inquiries about the content should be directed to SynergyLab.</p>
+        <p>You may view the content contained on CancerINFO solely for your own personal or research purposes. You may not copy, transfer, reproduce, modify, or create derivative works of any part of the website content for any reason and you may not distribute, license or sell the content, alone or in combination with other materials, to any other person or entity, without the express written permission of SynergyLab.</p>
+        {/if}
+        {if count($st) == 0}
+        <h4>About CancerINFO</h4>
+        <p>&nbsp;</p>
+        <p>Rapidly improving in understanding the genomic landscape of oncology and affordable clinical sequencing has created an opportunity for targeting cancer genome features (CGFs) of precision medicine to personalized genome of patients, which is increasingly recognized as a mainstay cancer care. Tranditionally, the off-label use of CGFs-guided target-agents across distinct cancers has not been warranted as standard care because of existent evidences that the response to a anticancer drug often depends on the origin of tissue.
+        </p><p> Although there are mutiple knowledgebases providing CGFs, data regarding the hierarchy of tissue in tumorigenesis is not readily available. Therefore, we develop an open-access knowledgebase hierarchically curating tissue-specific CGFs to facilitate annotation and clinical decision-making. Hierarchy system standardizes the CGFs-guided evidences into four clinical statements, five feature types, 30 tissue sites and 244 cancers of five grades. To date, ~12938 assocoations between clinical statement and CGFs in 1758 unique genes have been curated. The gene-mediated cancer pathway was regulated through more than 70% CGFs-associated genes. Thus, a public web resource and API were released and named CancerINFO.
+        </p><p> Furthermore, our data analysis has also exemplified the presence of tissue-specific tumorigenesis. To test the utility of large genomic panel or testing for precision medicine, we matched CGFs with the more than one million genomes of active patients across different tissues. Unfortunately, only 10%-50% genomes had one or more CGFs for different tissues.</p>
+        <p>&nbsp;</p>
+        <h4>Updating</h4>
+        <p>While we aim to keep the information up to date and correct, there will inevitably be gaps or mistakes. Please help us to identify any issues by sending an email to SynergyLab, or use the Contribute button.</p>
+        <p>Stay tuned for future data updates (improved annotations, new cancer genome features), as well as new features. You can follow us this page on.</p>
+        <h5>Oct 8, 2018</h5>
+        <h6>Update CancerINFO web interface</h6>
+        <p>We optimized the web interface, redesigned the search and cancer browsing interface. The CGFs searching and browsing are designed based on cancer tissue-hierarchies strategies.</p>
+        
+        <h5>Mar 9, 2018</h5>
+        <h6>Update CancerINFO knowledgebase</h6>
+        <p>New 53 CGFs from BLOOD cancers have been incorporated into our knowledgebase.</p>
+        
+        <h5>Dec 8, 2017</h5>
+        <h6>Update CancerINFO knowledgebase</h6>
+        <p>New 10 FDA-approvals have been incorporated into our knowledgebase. Introduced a curated list of cancer drugs.</p>
+
+        <h5>Oct 7, 2017</h5>
+        <h6>CancerINFO web interface and API </h6>
+        <p>An interactive web interface provides both the search and browsing function on the hierarchy of tissues, cancers, genes and CGFs. With we have created an open API, users can rapidly integrate our knowledgebase into their workflows.</p>
+        
+        <h5>Apr 5, 2017</h5>
+        <h6>CancerINFO hierarchy system</h6>
+        <p>Based on our goal, we have collected precison medicine information from various sources, such as guidelines from the FDA, NCCN, or ASCO, AACR, ClinicalTrials.gov and the scientific literature. Through the recognition which precison medicine information vary on the basis of specific evidence events within cancer contexts and specific alterations within a gene, the relevance content of cancer genome features (CGFs) was hierarchized by gene, alteration feature, drug information, cancer type, tissue type, evidence type and level, clinical significance.</p>
+        
+        <h5>Oct 1, 2016</h5>
+        <h6>CancerINFO initiative</h6>
+        <p>Following the Precision Medicine Revolution, we intend to create a precision oncology knowledgebase named as CancerINFO. The biomedical literature describing these associations is large and growing rapidly. Currently these interpretations exist largely in private or encumbered databases resulting in extensive repetition of effort. Realizing precision medicine will require this information to be centralized for application in the clinic. CancerINFO’ goal is to construct a comprehensive, open-access web resource for clinical annotation or cancer research.</p>
+        {/if}
+        {if isset($st['drug'])}
+        <h4>Cancer drug:</h4>
+        <table data-toggle="table" data-pagination="true" data-page-size=15>
+          <thead>
+            <tr>
+              <th data-sortable='true'>Drug Name</th>
+              <th  data-sortable='true'>Development</th>
+              <th data-sortable='true'>Phase</th>
+              <th>Indication and Link</th>
+            </tr>
+          </thead>
+          <tbody>
+          
+          {foreach $drugs as $key=>$val}
+          <tr>
+            <td>{$val.drug_name}</td>
+            <td>{$val.development}</td>
+            <td>{$val.phase}</td>
+            <td>{$val.indications_and_link}</td>
+          </tr>
+          {/foreach}
+            </tbody>
+          
+        </table>
+        {/if}
+        {if isset($st['level']) }
+        <h4>Level of evidence</h4>
+        <p>&nbsp;</p>
+        	<table data-toggle="table">
+                	<tr>
+                    	<th>level I</th>
+                        <td>Disease-associated consensus biomarker of response to an approved drug in human medicine"</td>
+                    </tr><tr>
+                        <th>level II</th>
+                        <td>Disease-associated standard care biomarker of response to an approved drug in clinical medicine</td>
+                    </tr><tr>
+                        <th>level III</th>
+                        <td>Patient clinical data or other clinical evidence supports the biomarker as indication of drug response</td>
+                    </tr><tr>
+                        <th>level IV</th>
+                        <td>Case reports or preclinical trials  in human support the trait as a biomarker of drug response</td>
+                    </tr><tr>
+                        <th>level V</th>
+                        <td>In vivo or in vitro models support the trait as a biomarker of drug response</td>
+                    </tr><tr>
+                   	    <th>level VI</th>
+                        <td>The triat as biomarker by indirect evidence</td>     
+                    </tr>
+                	<tr>
+                    	<th>level A</th>
+                        <td>Proven/consensus association in human medicine.</td>
+                    </tr><tr>
+                        <th>level B</th>
+                        <td>Clinical trial or other primary patient data supports association.</td>
+                    </tr><tr>
+                        <th>level C</th>
+                        <td>Individual case reports from clinical journals.</td>
+                    </tr><tr>
+                        <th>level D</th>
+                        <td>In vivo or in vitro models support association</td>
+                    </tr><tr>
+                        <th>level E</th>
+                        <td>Indirect evidence.</td>
+                    </tr>
+            </table>
+        {/if}
+        {if isset($st['type']) }
+        <h4>Type of evidence</h4>
+        <p>&nbsp;</p>
+        	<table data-toggle="table">
+                	<tr>
+                    	<th>Predictive</th>
+                        <td>Predictive evidence for pertaining to a feature’s effect on therapeutic response</td>
+                    </tr><tr>
+                        <th>Prognostic</th>
+                        <td>Prognostic evidence for pertaining to a feature’s impact on disease progression, severity, or patient survival</td>
+                    </tr><tr>
+                        <th>Diagnostic</th>
+                        <td>Diagnostic evidence for pertaining to a feature’s impact on patient diagnosis</td>
+                    </tr><tr>
+                        <th>Predisposing</th>
+                        <td>Predisposing evidence for pertaining to a feature's role in conferring susceptibility to a disease</td>
+                    </tr>
+            </table>
+        {/if}
+        {if isset($st['sup']) }
+        <h4>Supplemental Data</h4>
+        <p>&nbsp;</p>
+        	<table data-toggle="table">
+                	<tr>
+                    	<th>Gene Ontology (GO) enrichment in different tissues</th>
+                        <td><a href="data/GO.zip">GO.zip</a></td>
+                    </tr>
+                    <tr>
+                        <th>KEGG Pathway enrichment in different tissues</th>
+                        <td><a href="data/KEGG.zip">KEGG.zip</a></td>
+                    </tr>
+                    <tr>
+                        <th>STRING Function Network enrichment in different tissues</th>
+                        <td><a href="data/NETWORK.zip">NETWORK.zip</a></td>
+                    </tr>
+            </table>
+        {/if}
+        {if isset($st['submit']) }
+        <p>There are several ways you can make a contribution to this important problem:</p>
+        <p><strong>1. Add</strong><br />
+          Propose a new genomic variant (e.g. single nucleotide substitution, structural variant, gene fusion, etc.), add evidence statements that support clinical actions associated with such variants, or help create a synthesized interpretation or summary of the corpus of evidence for a variant.</p>
+        <p><strong>2. Approve</strong><br />
+          Community Editors and Moderators may approve submitted evidence items, after which the community may view and edit the item.</p>
+        <p><strong>3. View</strong><br />
+          Make use of the community-created content in your own research by browsing, searching, and examining detailed evidence items. All CIViC data and source code are provided freely for almost any use.</p>
+        <p><strong>4. Edit</strong><br />
+          Submit a correction or addition to any details about a genomic event, evidence statement, or interpretation.</p>
+        <p><strong>5. Discuss</strong><br />
+          Participate in an ongoing discussion in an effort to reach community consensus on the appropriate clinical action(s) for a genomic event.</p>
+        <p><strong>6. Apply/Reject</strong><br />
+          Editors and Moderators may apply or reject the edits made by other community members, after taking into account community discussions and opinion.</p>
+        <p>Before commenting, correcting, or creating, please visit the help and FAQ pages to learn more about the CIViC data model and browse the existing content for examples. Understand the data model but unsure of where to start? Check out our list of high priority genes for inspiration.</p>
+        </p>
+        {/if}
+        {if isset($st['CCL'])}
+        	<h4>Drugs for cell line of {$ccl_cancer}:</h4>
+        <table data-toggle="table" data-pagination="true" data-page-size=15>
+          <thead>
+            <tr>
+              <th data-sortable='true'>CELL-LINE_ID</th>
+              <th data-sortable='true'>DRUG_NAME</th>
+              <th data-sortable='true'>TARGET</th>
+              <th data-sortable='true'>LN_IC50</th>
+              <th data-sortable='true'>RESPONSE_TYPE</th>
+              <th data-sortable='true'>Z_SCORE</th>
+            </tr>
+          </thead>
+          <tbody>
+          
+          {foreach $ccl as $key=>$val}
+          <tr>
+            <td><a href="{$val.REFERENCE}">{$val.COSMIC_ID}</a></td>
+            <td>{$val.DRUG_NAME}</td>
+            <td>{$val.TARGET}</td>
+            <td>{$val.LN_IC50}</td>
+            <td>{$val.RESPONSE_TYPE}</td>
+            <td>{$val.Z_SCORE}</td>
+          </tr>
+          {/foreach}
+            </tbody>
+        </table>
+        {/if}
+        </div>
+        </div>
+      <div style="clear:both"></div>
+    </div>
+    <script type="text/javascript">
+	function operateFormatter(value, row, index) {
+		var e = '';
+		
+		if(value.length > 0){
+        	var e = '<a style="cursor:pointer" onclick=alert("' + "234ss "+"d" + '")>support</a>';
+		}
+        return e;
+    }
+    </script>
+    
+  </div>
+
+
+<div class="footer">
+  <div class="foot">
+    <p>Copyright © 2017-2020 <a href="https://github.com/ModelLAB-ZJU">SynergyLAB</a> | All Rights Reserved </p>
+    
+  </div>
+</div>
+
+</div>
+</body>
+</html>

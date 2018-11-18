@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>{$title}</title>
+<link href="img/cancerinfo_ico.ico" rel="shortcut icon" />
+
+<link rel="stylesheet" href="css/stylesheet.css" />
+<link rel="stylesheet" href="css/nav.css" />
+<script src="lib/cancerT.js" type="text/javascript"></script>
+<script src="lib/d3.v3.min.js" language="JavaScript"></script>
+<script src="lib/liquidFillGauge.js" language="JavaScript"></script>
+
+</head>
+<body>
+<div id="watermark"></div>
+<div class="main">
+  <div class="navbar">
+    <div class="navi">
+      <div class="nav-brand"><a href="#/"><img src="img/modellab_logo.png"></a></div>
+      <div id="nav-ui">
+        <ul>
+          <li><a href="index.php"><b>CancerINFO</b></a></li>
+          <li><a href="cancer_browser.php">CANCER BROWSER</a></li>
+          <li><a href="gene_browser.php">GENE BROWSER</a></li>
+          <li><a href="search.php">SEARCH</a></li>
+          <li><a href="data.php">DOWNLOAD</a></li>
+          <li><a href="doc.php">DOCUMENTATION</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="content">
+    <div class="content-index-about">
+        <h2>About CancerINFO</h2>
+        <div style="font-size:12px; line-height:25px;"><p>Future progress in precision oncology is dependent on both a comprehensive understanding of the associations between tissue-specific cancer genome features (CGFs) and their efficacy, as well as the power to access clinically actionable information in a clinically acceptable time-frame.
+</p><p>
+Here, we have created an open-access knowledgebase CancerINFO for tissue-specific genome features in cancer. The information is curated from various sources including guidelines from the FDA, NCCN, AACR, ASCO, ClinicalTrails.gov and the scientific literature. CancerINFO’s hierarchy system standardizes the CGFs-guided evidences into four clinical statements, five feature types, 30 tissue sites and 244 cancers of five grades. To date, ~12938 assocoations between clinical statement and CGFs in 1758 unique genes have been curated. The gene-mediated cancer pathway was regulated through more than 70% CGFs-associated genes.</p>
+<p>
+In addition to providing both the search and browsing function, CancerINFO API helps users to integrate our knowledgebase into their workflows or protocols. Case searching of active patients provides insight into clinical histories of specific CGFs, as well as those that could improve clinical utilities by additional investigation. Outside of CancerINFO, there are no publicly available knowledgebases to describe tissue-specific CGFs currently. CancerINFO is not intended to replace the other available resources. On the other hand, it should be viewed as complementary in our ongoing efforts to support annotation and clinical treatment decision.
+</p><p>
+When using CancerINFO, please cite: PubMed ID</p></div>
+    </div>
+    <div class="content-index-stats">
+       <svg width="300" height="300" font-family="sans-serif" font-size="10" text-anchor="middle"></svg>
+       <script src="lib/d4.v4.min.js"></script>
+       <script src="lib/bubblechart.js"></script>
+    </div>
+     <div style="clear:both"></div>
+    <hr width="100%" style="border: rgba(43,117,188,0.05) 1px solid;">
+        <!--<div class="content-index-orders">
+            	<table class="order-list2">
+                	<th colspan="3">Statistics</th>
+            		<tr><td></td><td>Features:</td><td>14222</td></tr>
+            		<tr><td></td><td>Genes:</td><td> 2271</td></tr>
+                	<tr><td></td><td>Cancer Type:</td><td> 268</td></tr>
+                	<tr><td></td><td>Tissue Type:</td><td> 30</td></tr>
+            		<tr><td></td><td>References:</td><td> 6998</td></tr>
+                	<tr><td></td><td>Cases:</td><td> 1289540</td></tr>
+            	</table>
+                <table class="order-list1">
+                	<th colspan="3">Gene</th>
+                    <tbody>
+            		<tr><td></td><td>1</td><td>BRCA1</td></tr>
+                    <tr><td></td><td>2</td><td>EGFR</td></tr>
+                    <tr><td></td><td>3</td><td>TP53</td></tr>
+                    <tr><td></td><td>4</td><td>ABL1</td></tr>
+                    <tr><td></td><td>5</td><td>KIT</td></tr>
+                    <tr><td></td><td>6</td><td>ALK</td></tr>
+                    <tr><td></td><td>7</td><td>PTEN</td></tr>
+                    <tr><td></td><td>8</td><td>BRAF</td></tr>
+                    <tr><td></td><td>9</td><td>BRCA2</td></tr>
+                    <tr><td></td><td>10</td><td>CDKN2A</td></tr>
+                    </tbody>
+            	</table>
+                <table class="order-list3">
+                <th colspan="3">Cancer</th>
+            		<tbody>
+            		<tr><td></td><td>1</td><td>Breast Carcinoma</td></tr>
+                    <tr><td></td><td>2</td><td>Colorectal Cancer</td></tr>
+                    <tr><td></td><td>3</td><td>Prostate Cancer</td></tr>
+                    <tr><td></td><td>4</td><td>Esophagogastric Carcinoma</td></tr>
+                    <tr><td></td><td>5</td><td>Melanoma</td></tr>
+                    <tr><td></td><td>6</td><td>Lung Cancer</td></tr>
+                    <tr><td></td><td>7</td><td>Hepatocellular Carcinoma</td></tr>
+                    <tr><td></td><td>8</td><td>Non-Small Cell Lung Cancer</td></tr>
+                    <tr><td></td><td>9</td><td>Pancreatic Cancer</td></tr>
+                    <tr><td></td><td>10</td><td>Renal Cell Carcinoma</td></tr>
+                    </tbody>
+            	</table>
+                <table class="order-list4">
+                <th colspan="3">Tissue</th>
+                	<tbody>
+            		<tr><td></td><td>1</td><td>BLOOD</td></tr>
+            		<tr><td></td><td>2</td><td>LUNG</td></tr>
+                	<tr><td></td><td>3</td><td>BRAIN</td></tr>
+                	<tr><td></td><td>4</td><td>BREAST</td></tr>
+            		<tr><td></td><td>5</td><td>BOWEL</td></tr>
+                	<tr><td></td><td>6</td><td>SKIN</td></tr>
+                    <tr><td></td><td>7</td><td>PROSTATE</td></tr>
+                    <tr><td></td><td>8</td><td>STOMACH</td></tr>
+                    <tr><td></td><td>9</td><td>LYMPH</td></tr>
+                    <tr><td></td><td>10</td><td>LIVER</td></tr> 
+                    </tbody>                 
+            	</table>
+        </div>-->
+        <div style="margin-left:70px; margin-bottom:50px;">
+                      <div class="stat"><svg id="fillgauge1" width="80" height="80"></svg><h3>Cancers</h3></div>
+                      <div class="stat"><svg id="fillgauge2" width="80" height="80"></svg><h3>Tissues</h3></div>
+                      <div class="stat"><svg id="fillgauge3" width="80" height="80"></svg><h3>Genes</h3></div>
+                      <div class="stat"><svg id="fillgauge4" width="80" height="80"></svg><h3>CGFs</h3></div>
+                      <div class="stat"><svg id="fillgauge5" width="80" height="80"></svg><h3>Cases</h3></div>
+                      <div class="stat"><svg id="fillgauge6" width="80" height="80"></svg><h3>References</h3></div>
+                      <div style="clear:both"></div>
+        </div>
+        <div style="float: right;"><a href="https://www.revolvermaps.com/livestats/53cqzulk6x2/"><img src="//rf.revolvermaps.com/w/3/s/a/6/0/0/007eff/000000/ffffff/53cqzulk6x2.png" alt="Stats" style="border:0;"></a></div>
+<!--        <p align="center"><i>Browse<a href="#"> more statistics</a> of cancer</i></p>
+        <hr />
+        <div>
+        	<div align="center"><img src="img/personalized_medicine_bottleneck.png" style="width:760px;" /></div>
+        </div>-->
+        <div style="clear:both"></div>
+        
+    </div>
+	<script language="JavaScript">
+				  var config = liquidFillGaugeDefaultSettings();
+				  config.maxValue=244*2;
+				  var cancer = loadLiquidFillGauge("fillgauge1", 244, config);
+				  config.maxValue=30*2;
+				  config.waveColor="rgba(222,83,83,1)";
+				  var tissue = loadLiquidFillGauge("fillgauge2", 30, config);
+				  config.maxValue=1758*2;
+				  config.waveColor="rgba(86,180,85,1)";
+				  var drug = loadLiquidFillGauge("fillgauge3", 1758, config);
+				  config.maxValue=12938*2;
+				  config.waveColor="rgba(190,210,237,1)";
+				  var model = loadLiquidFillGauge("fillgauge4", 12938, config);
+				  config.maxValue=1289540*2;
+				  config.waveColor="rgba(255,153,61,1)";
+				  var gene = loadLiquidFillGauge("fillgauge5", 1289540, config);
+				  config.maxValue=6998*2;
+				  config.waveColor="rgba(173,229,161,1)";
+				  var ref = loadLiquidFillGauge("fillgauge6", 6998, config);
+			  
+	</script>
+  </div>
+  <div class="footer">
+    <div class="foot">
+      <p>Copyright © 2017-2020 <a href="https://github.com/ModelLAB-ZJU">SynergyLAB</a> | All Rights Reserved </p>
+    </div>
+  </div>
+</div>
+</body>
+</html>

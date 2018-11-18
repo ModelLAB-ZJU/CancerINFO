@@ -1,0 +1,782 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "CancerINFO API definition from SynergyLAB",
+    "version" : "1.0.0",
+    "title" : "CancerINFO API",
+    "contact" : {
+      "email" : "xiang-chen@zju.edu.cn"
+    }
+  },
+  "tags" : [ {
+    "name" : "gene_info",
+    "description" : "API for the specific gene information"
+  }, {
+    "name" : "gene_feature",
+    "description" : "API for the features from specific gene"
+  }, {
+    "name" : "cancer_feature",
+    "description" : "API for the features from specific cancer"
+  }, {
+    "name" : "cancer_drug",
+    "description" : "API for the FDA approved drug list in the cancer type"
+  }, {
+    "name" : "cancer_list",
+    "description" : "API for cancer list from database"
+  }, {
+    "name" : "tissue_list",
+    "description" : "API for tissue list from database"
+  }, {
+    "name" : "drug_list",
+    "description" : "API for drug list from database"
+  } ],
+  "paths" : {
+    "/api/geneinfo" : {
+      "get" : {
+        "tags" : [ "gene_info" ],
+        "summary" : "Returns gene information by gene symbol",
+        "description" : "Returns gene-related information",
+        "operationId" : "get_gene_info",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "gene_symbol",
+          "in" : "query",
+          "required" : true,
+          "type" : "string",
+          "description" : "gene symbol refers HUGO Gene Nomenclature Committee"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/geneinfo"
+            }
+          },
+          "404" : {
+            "description" : "Could not access to database"
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "gene_info" ],
+        "summary" : "Returns gene information by gene symbol",
+        "description" : "Returns gene-related information",
+        "operationId" : "post_gene_info",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "gene_symbol",
+          "in" : "query",
+          "required" : true,
+          "type" : "string",
+          "description" : "gene symbol refers HUGO Gene Nomenclature Committee"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/geneinfo"
+            }
+          },
+          "404" : {
+            "description" : "Could not access to database"
+          }
+        }
+      }
+    },
+    "/api/genefeature" : {
+      "get" : {
+        "tags" : [ "gene_feature" ],
+        "summary" : "Returns gene features by gene symbol",
+        "description" : "Returns gene-related features",
+        "operationId" : "get_gene_feature",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "gene_symbol",
+          "in" : "query",
+          "required" : true,
+          "type" : "string",
+          "description" : "gene symbol refers HUGO Gene Nomenclature Committee"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/genefeature"
+            }
+          },
+          "404" : {
+            "description" : "Could not access to database"
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "gene_feature" ],
+        "summary" : "Returns gene features by gene symbol",
+        "description" : "Returns gene-related features",
+        "operationId" : "post_gene_feature",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "gene_symbol",
+          "in" : "query",
+          "required" : true,
+          "type" : "string",
+          "description" : "gene symbol refers HUGO Gene Nomenclature Committee"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/genefeature"
+            }
+          },
+          "404" : {
+            "description" : "Could not access to database"
+          }
+        }
+      }
+    },
+    "/api/cancerfeature" : {
+      "get" : {
+        "tags" : [ "cancer_feature" ],
+        "summary" : "Returns cancer features by cancer name",
+        "description" : "Returns cancer-related features",
+        "operationId" : "get_cancer_feature",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "cancer_name",
+          "in" : "query",
+          "required" : true,
+          "type" : "string",
+          "description" : "cancer name refers Oncotree"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/cancerfeature"
+            }
+          },
+          "404" : {
+            "description" : "Could not access to database"
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "cancer_feature" ],
+        "summary" : "Returns cancer features by cancer name",
+        "description" : "Returns cancer-related features",
+        "operationId" : "post_cancer_feature",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "cancer_name",
+          "in" : "query",
+          "required" : true,
+          "type" : "string",
+          "description" : "cancer name refers Oncotree"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/cancerfeature"
+            }
+          },
+          "404" : {
+            "description" : "Could not access to database"
+          }
+        }
+      }
+    },
+    "/api/cancerdrug" : {
+      "get" : {
+        "tags" : [ "cancer_drug" ],
+        "summary" : "Returns care drugs for cancer",
+        "description" : "Returns FDA-approved drugs and Cell-line testing drugs for specific cancer",
+        "operationId" : "get_cancer_drug",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "cancer_name",
+          "in" : "query",
+          "required" : true,
+          "type" : "string",
+          "description" : "cancer name refers Oncotree"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/cancerdrug"
+            }
+          },
+          "404" : {
+            "description" : "Could not access to database"
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "cancer_drug" ],
+        "summary" : "Returns care drugs for cancer",
+        "description" : "Returns FDA-approved drugs and Cell-line testing drugs for specific cancer",
+        "operationId" : "post_cancer_drug",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "cancer_name",
+          "in" : "query",
+          "required" : true,
+          "type" : "string",
+          "description" : "cancer name refers Oncotree"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/cancerdrug"
+            }
+          },
+          "404" : {
+            "description" : "Could not access to database"
+          }
+        }
+      }
+    },
+    "/api/cancerlist" : {
+      "get" : {
+        "tags" : [ "cancer_list" ],
+        "summary" : "Returns cancer information",
+        "description" : "Returns cancer list and cancer information",
+        "operationId" : "get_cancer_list",
+        "produces" : [ "application/json" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/cancerlist"
+            }
+          },
+          "404" : {
+            "description" : "Could not access to database"
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "cancer_list" ],
+        "summary" : "Returns cancer information",
+        "description" : "Returns cancer list and cancer information",
+        "operationId" : "post_cancer_list",
+        "produces" : [ "application/json" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/cancerlist"
+            }
+          },
+          "404" : {
+            "description" : "Could not access to database"
+          }
+        }
+      }
+    },
+    "/api/tissuelist" : {
+      "get" : {
+        "tags" : [ "tissue_list" ],
+        "summary" : "Returns tissue information",
+        "description" : "Returns tissue list and tissue information",
+        "operationId" : "get_tissue_list",
+        "produces" : [ "application/json" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/tissuelist"
+            }
+          },
+          "404" : {
+            "description" : "Could not access to database"
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "tissue_list" ],
+        "summary" : "Returns tissue information",
+        "description" : "Returns tissue list and tissue information",
+        "operationId" : "post_tissue_list",
+        "produces" : [ "application/json" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/tissuelist"
+            }
+          },
+          "404" : {
+            "description" : "Could not access to database"
+          }
+        }
+      }
+    },
+    "/api/druglist" : {
+      "get" : {
+        "tags" : [ "drug_list" ],
+        "summary" : "Returns drug information",
+        "description" : "Returns drug list and drug information",
+        "operationId" : "get_drug_list",
+        "produces" : [ "application/json" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/druglist"
+            }
+          },
+          "404" : {
+            "description" : "Could not access to database"
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "drug_list" ],
+        "summary" : "Returns drug information",
+        "description" : "Returns drug list and drug information",
+        "operationId" : "post_drug_list",
+        "produces" : [ "application/json" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/druglist"
+            }
+          },
+          "404" : {
+            "description" : "Could not access to database"
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "GO_BP" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "term" : {
+          "type" : "string"
+        },
+        "class" : {
+          "type" : "string"
+        }
+      },
+      "xml" : {
+        "name" : "GO_BP"
+      }
+    },
+    "GO_CC" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "term" : {
+          "type" : "string"
+        },
+        "class" : {
+          "type" : "string"
+        }
+      },
+      "xml" : {
+        "name" : "GO_CC"
+      }
+    },
+    "GO_MF" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "term" : {
+          "type" : "string"
+        },
+        "class" : {
+          "type" : "string"
+        }
+      },
+      "xml" : {
+        "name" : "GO_MF"
+      }
+    },
+    "other" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "term" : {
+          "type" : "string"
+        },
+        "class" : {
+          "type" : "string"
+        }
+      },
+      "xml" : {
+        "name" : "other"
+      }
+    },
+    "geneinfo" : {
+      "type" : "object",
+      "properties" : {
+        "symbol" : {
+          "type" : "string"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "entrezgene_id" : {
+          "type" : "integer"
+        },
+        "alias" : {
+          "type" : "string"
+        },
+        "ensembl_id" : {
+          "type" : "string"
+        },
+        "chr" : {
+          "type" : "integer"
+        },
+        "start" : {
+          "type" : "integer"
+        },
+        "end" : {
+          "type" : "integer"
+        },
+        "strand" : {
+          "type" : "integer"
+        },
+        "GO_BP" : {
+          "$ref" : "#/definitions/GO_BP"
+        },
+        "GO_CC" : {
+          "$ref" : "#/definitions/GO_CC"
+        },
+        "GO_MF" : {
+          "$ref" : "#/definitions/GO_MF"
+        },
+        "other" : {
+          "$ref" : "#/definitions/other"
+        },
+        "summary" : {
+          "type" : "string"
+        }
+      },
+      "xml" : {
+        "name" : "geneinfo"
+      }
+    },
+    "cancerinfo" : {
+      "type" : "object",
+      "properties" : {
+        "site" : {
+          "type" : "string"
+        },
+        "level" : {
+          "type" : "integer"
+        },
+        "nci" : {
+          "type" : "string"
+        },
+        "umis" : {
+          "type" : "string"
+        }
+      },
+      "xml" : {
+        "name" : "cancerinfo"
+      }
+    },
+    "cancerlist" : {
+      "type" : "object",
+      "properties" : {
+        "cancer name" : {
+          "$ref" : "#/definitions/cancerinfo"
+        }
+      },
+      "xml" : {
+        "name" : "cancerlist"
+      }
+    },
+    "tissuelist" : {
+      "type" : "object",
+      "properties" : {
+        "tissue" : {
+          "type" : "string"
+        },
+        "cancer" : {
+          "type" : "string"
+        },
+        "nci" : {
+          "type" : "string"
+        },
+        "umis" : {
+          "type" : "string"
+        },
+        "level" : {
+          "type" : "integer"
+        }
+      },
+      "xml" : {
+        "name" : "cancerlist"
+      }
+    },
+    "druglist" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "integer"
+        },
+        "drug_name" : {
+          "type" : "string"
+        },
+        "drug_synonymous_name" : {
+          "type" : "string"
+        },
+        "drug_targets" : {
+          "type" : "string"
+        },
+        "indications_and_link" : {
+          "type" : "string"
+        },
+        "development" : {
+          "type" : "string"
+        },
+        "phase" : {
+          "type" : "string"
+        }
+      },
+      "xml" : {
+        "name" : "cancerlist"
+      }
+    },
+    "cancerfdadrug" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "integer"
+        },
+        "drug" : {
+          "type" : "string"
+        },
+        "brand" : {
+          "type" : "string"
+        },
+        "FDA" : {
+          "type" : "string"
+        },
+        "conditions" : {
+          "type" : "string"
+        },
+        "conditions_oncotree" : {
+          "type" : "string"
+        },
+        "conditions_treat_or_prevent" : {
+          "type" : "string"
+        },
+        "combined_drug" : {
+          "type" : "string"
+        },
+        "drug_type" : {
+          "type" : "string"
+        },
+        "source_link" : {
+          "type" : "string"
+        }
+      },
+      "xml" : {
+        "name" : "cancerfdalist"
+      }
+    },
+    "cancerccldrug" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "integer"
+        },
+        "cosmic_ccl_id" : {
+          "type" : "string"
+        },
+        "drug_name" : {
+          "type" : "string"
+        },
+        "target_genes" : {
+          "type" : "string"
+        },
+        "cancer_name" : {
+          "type" : "string"
+        },
+        "LN_IC50" : {
+          "type" : "string"
+        },
+        "AUC" : {
+          "type" : "string"
+        },
+        "Z_score" : {
+          "type" : "string"
+        },
+        "response_type" : {
+          "type" : "string"
+        },
+        "reference" : {
+          "type" : "string"
+        }
+      },
+      "xml" : {
+        "name" : "cancerccldrug"
+      }
+    },
+    "cancerdrug" : {
+      "type" : "object",
+      "properties" : {
+        "FDA approved" : {
+          "$ref" : "#/definitions/cancerfdadrug"
+        },
+        "drug from cell-line testing" : {
+          "$ref" : "#/definitions/cancerccldrug"
+        }
+      },
+      "xml" : {
+        "name" : "cancerdrug"
+      }
+    },
+    "cancergene" : {
+      "type" : "object",
+      "properties" : {
+        "symbol" : {
+          "type" : "string"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "alias" : {
+          "type" : "string"
+        },
+        "entrezgene_id" : {
+          "type" : "string"
+        },
+        "ensembl_id" : {
+          "type" : "string"
+        },
+        "role" : {
+          "type" : "string"
+        }
+      },
+      "xml" : {
+        "name" : "cancergene"
+      }
+    },
+    "gene" : {
+      "type" : "object",
+      "properties" : {
+        "role in cancer" : {
+          "type" : "string"
+        },
+        "gene-related cancer" : {
+          "type" : "string"
+        },
+        "gene in cancer and therapy evidence" : {
+          "type" : "string"
+        }
+      },
+      "xml" : {
+        "name" : "gene"
+      }
+    },
+    "genemuation" : {
+      "type" : "object",
+      "properties" : {
+        "mutation" : {
+          "type" : "string"
+        },
+        "evidence_type" : {
+          "type" : "string"
+        },
+        "evidence_level" : {
+          "type" : "string"
+        },
+        "clinical_significance" : {
+          "type" : "string"
+        },
+        "reference" : {
+          "type" : "string"
+        }
+      }
+    },
+    "genemuationtreat" : {
+      "type" : "object",
+      "properties" : {
+        "mutation" : {
+          "type" : "string"
+        },
+        "drugs" : {
+          "type" : "string"
+        },
+        "drug_family" : {
+          "type" : "string"
+        },
+        "evidence_type" : {
+          "type" : "string"
+        },
+        "evidence_level" : {
+          "type" : "string"
+        },
+        "clinical_significance" : {
+          "type" : "string"
+        },
+        "reference" : {
+          "type" : "string"
+        }
+      }
+    },
+    "cancerfeature" : {
+      "type" : "object",
+      "properties" : {
+        "gene in cancer" : {
+          "$ref" : "#/definitions/cancergene"
+        },
+        "gene mutation in cancer" : {
+          "$ref" : "#/definitions/genemuation"
+        },
+        "gene mutation in cancer treatment" : {
+          "$ref" : "#/definitions/genemuationtreat"
+        }
+      },
+      "xml" : {
+        "name" : "cancerfeature"
+      }
+    },
+    "genefeature" : {
+      "type" : "object",
+      "properties" : {
+        "gene in cancer" : {
+          "$ref" : "#/definitions/gene"
+        },
+        "gene mutation in cancer" : {
+          "$ref" : "#/definitions/genemuation"
+        },
+        "gene mutation in cancer treatment" : {
+          "$ref" : "#/definitions/genemuationtreat"
+        }
+      },
+      "xml" : {
+        "name" : "genefeature"
+      }
+    }
+  },
+  "host" : "public.synergylab.cn",
+  "basePath" : "/CancerINFO",
+  "schemes" : [ "http" ]
+}

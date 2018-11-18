@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>{$title}</title>
+<link href="img/cancerinfo_ico.ico" rel="shortcut icon" />
+<link rel="stylesheet" href="css/stylesheet.css" />
+<link rel="stylesheet" type="text/css" href="css/qtip.css">
+<link type="text/css" rel="stylesheet" href="css/cmotree.css">
+<script src="lib/jquery-1.12.1.min.js"></script>
+<script src="lib/cancerT.js"></script>
+<script src="lib/bootstrap.min.js"></script>
+<script type="text/javascript" src="lib/d3.v3.min.js"></script>
+<script type="text/javascript" src="lib/qtip.js"></script>
+<script type="text/javascript" src="lib/clipboard.js"></script>
+<script type="text/javascript" src="lib/cmotree.js"></script>
+<script type="text/javascript" src="lib/main.js"></script>
+</head>
+
+<body>
+<div id="watermark"></div>
+<div class="main">
+  <div class="navbar">
+    <div class="navi">
+      <div class="nav-brand"><a href="#/"><img class="logo-brand" src="img/modellab_logo.png"></a></div>
+      <div id="nav-ui">
+        <ul>
+          <li><a href="index.php"><b>CancerINFO</b></a></li>
+          <li><a href="cancer_browser.php">CANCER BROWSER</a></li>
+          <li><a href="gene_browser.php">GENE BROWSER</a></li>
+          <li><a href="search.php">SEARCH</a></li>
+          <li><a href="data.php">DOWNLOAD</a></li>
+          <li><a href="doc.php">DOCUMENTATION</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="content">
+    <div style=" width:1050px;">
+    	<div><b>Includes 244 tumor types from 30 tissues.This hierarchical strategy refers to oncotree.</b></div>
+        <div style="width:600px; line-height:25px; margin-top:15px;">We divided the cancer browsing mode into 6 levels, with the first level being the tissue type (Primary), the second level being main type of cancer (mata main type), and the third to the last level being 4 levels of cancer (Secondary, Tertiary, Quaternary, Quinternary). </div>
+        
+        <br />
+        <div id="tumor_search">
+          <input type="text" placeholder="Search Tumor Type">
+          <button type="button">&nbsp;Find&nbsp;</button>
+        </div>
+        <div id="tree">
+        <div id="tree-div"></div>
+        </div>
+        {$update}
+        <div style="clear:both"></div>
+    </div>
+    </div>
+  </div>
+    <script type="text/javascript">
+	
+    function operateFormatter(value, row, index) {
+        var e = '<a href="cancer_browser.php?tissue='+ $('#tissue').text() + '&cancer=' + value + '">' + value + '</a>';
+        return e;
+    }
+    </script>
+  <div class="footer">
+    <div class="foot">
+      <p>Copyright © 2017-2020 <a href="https://github.com/ModelLAB-ZJU">SynergyLAB</a> | All Rights Reserved </p>
+      
+    </div>
+  </div>
+</div>
+</body>
+</html>

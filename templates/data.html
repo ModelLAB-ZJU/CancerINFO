@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>{$title}</title>
+<link href="img/cancerinfo_ico.ico" rel="shortcut icon" />
+<link rel="stylesheet" href="css/stylesheet.css" />
+<script src="lib/jquery-1.12.1.min.js"></script>
+<script src="lib/cancerT.js"></script>
+</head>
+
+<body>
+<div id="watermark"></div>
+<div class="main">
+<div class="navbar">
+  <div class="navi">
+    <div class="nav-brand"><a href="#/"><img class="logo-brand" src="img/modellab_logo.png"></a></div>
+    <div id="nav-ui">
+      <ul>
+        <li><a href="index.php"><b>CancerINFO</b></a></li>
+          <li><a href="cancer_browser.php">CANCER BROWSER</a></li>
+          <li><a href="gene_browser.php">GENE BROWSER</a></li>
+          <li><a href="search.php">SEARCH</a></li>
+          <li><a href="data.php">DOWNLOAD</a></li>
+          <li><a href="doc.php">DOCUMENTATION</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="content">
+    <div>
+      <iframe src="api/index.html" name="myframe" id="api" style="width:100%;"  scrolling="yes" frameborder="0" border="0"></iframe>
+      <script type="text/javascript">
+		function reinitIframe(){
+			var iframe = document.getElementById("api");
+			try{
+				var bHeight = iframe.contentWindow.document.body.scrollHeight;
+				var dHeight = iframe.contentWindow.document.documentElement.scrollHeight;
+				var height = Math.max(bHeight, dHeight);
+				iframe.height = height;
+				console.log(height);
+			}catch (ex){}
+		}
+		window.setInterval("reinitIframe()", 200);
+		</script>
+        <p>​​&#8203;​​&#8203;</p>
+        <p>​​&#8203;​​&#8203;</p> 
+    </div>
+  </div>
+  <div class="footer">
+    <div class="foot">
+      <p>Copyright © 2017-2020 <a href="https://github.com/ModelLAB-ZJU">SynergyLAB</a> | All Rights Reserved </p>
+      
+    </div>
+  </div>
+</div>
+</body>
+</html>
